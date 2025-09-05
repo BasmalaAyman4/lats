@@ -1,0 +1,124 @@
+/* Scrolling Banner Container */
+.scrollingBanner {
+    width: 100%;
+    background: linear-gradient(135deg, #f1c6c6 0%, #f3baba 50%, #f7aeae 100%);
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    margin: 20px 0;
+}
+
+/* Scrolling Content */
+.scrollingContent {
+    display: flex;
+    align-items: center;
+    animation: scroll 20s linear infinite;
+    white-space: nowrap;
+       
+}
+
+/* Pause animation on hover */
+.scrollingBanner:hover .scrollingContent {
+    animation-play-state: paused;
+}
+
+/* Banner Items */
+.bannerItem {
+    color: white;
+    font-weight: 350;
+    font-size: 30px;
+    padding: 0 30px;
+    display: inline-flex;
+    align-items: center;
+    height: 80px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 20px 0;
+}
+
+/* Highlighted Items (UP TO 50% OFF) */
+.highlight {
+    font-size: 30px;
+    font-weight: 350;
+    color: #000;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Sale Tags */
+
+
+/* Scroll Animation */
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Add some visual separators */
+.bannerItem:not(.tag):not(:last-child)::after {
+    content: " ";
+    color: rgba(255, 255, 255, 0.6);
+    margin-left: 30px;
+    font-size: 12px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .scrollingBanner {
+        height: 45px;
+    }
+
+    .bannerItem {
+        font-size: 14px;
+        padding: 0 20px;
+        height: 45px;
+    }
+
+    .bannerItem.highlight {
+        font-size: 16px;
+    }
+
+    .bannerItem.tag {
+        font-size: 12px;
+        padding: 6px 12px;
+        margin: 0 10px;
+    }
+
+    .scrollingContent {
+        animation: scroll 15s linear infinite;
+    }
+}
+
+@media (max-width: 480px) {
+    .scrollingBanner {
+        height: 40px;
+    }
+
+    .bannerItem {
+        font-size: 12px;
+        padding: 0 15px;
+        height: 40px;
+    }
+
+    .bannerItem.highlight {
+        font-size: 14px;
+    }
+
+    .bannerItem.tag {
+        font-size: 11px;
+        padding: 4px 8px;
+        margin: 0 8px;
+    }
+
+    .scrollingContent {
+        animation: scroll 12s linear infinite;
+    }
+}

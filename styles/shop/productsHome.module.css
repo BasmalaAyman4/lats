@@ -1,0 +1,242 @@
+.products__section {
+    position: relative;
+    padding: 100px 0px 90px 170px;
+    column-gap: 30px;
+    width: 100%;
+    box-sizing: border-box; 
+    background-color: #F9F5F4;
+}
+
+.products__section::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 74px;
+    bottom: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    background-image: url(../../assets/section-before-shape.png);
+    background-size: cover;
+    background-repeat: repeat-x;
+    background-repeat: no-repeat-y;
+    background-position: center;
+    animation: slide 80s linear infinite;
+    -webkit-animation: slide 80s linear infinite;
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    z-index: 10000;
+}
+
+.products__section::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 74px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    background-image: url(../../assets/section-before-shape.png);
+    background-size: cover;
+    background-repeat: repeat-x;
+    background-repeat: no-repeat-y;
+    background-position: center;
+    animation: slide 80s linear infinite;
+    -webkit-animation: slide 80s linear infinite;
+    z-index: 10000;
+}
+
+@keyframes slide {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 100vw 0;
+    }
+}
+
+.product__body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.product__title{
+    font-size: 27px;
+      color: #FE8787;
+
+}
+.product__para{
+    font-size: 17px;
+      font-family: "Condiment", cursive;
+      margin-bottom: 17px;
+}
+.products__filter {
+    display: flex;
+    margin: 50px auto;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+
+}
+.shape__body{
+    position: relative;
+    width: 126px;
+    height: 126px;
+    cursor: pointer;
+}
+.shape__sale{
+    margin-left: 150px;
+
+}
+.shape__para{
+    position: absolute;
+    z-index: 1000;
+    font-size: 50px ;
+    left: -30px;
+    top: 20px;
+    font-weight: bold;
+}
+
+.shape__first{
+    position: absolute;
+top: -30px;
+
+}
+.shape__body:hover .shape__para{
+    color: #FE8787;
+}
+
+.shape__body svg{
+width: 100%;
+height: 100%;
+}
+.shape__body:hover .shape__first svg{
+fill: #a59e9ec7;
+}
+.shape__first svg{
+fill: #FE8787;
+}
+
+.shape__first svg{
+    position: relative;
+    z-index: 100;
+    
+}
+.shape__third svg{
+position: relative;
+left: 0;
+top: -130px;
+z-index: 0;
+fill: #fe878770;
+
+}
+.shape__body:hover .shape__third svg{
+fill: #c2bfbf7a;
+}
+
+.shape__active .shape__para{
+    color: #FE8787;
+}
+
+.shape__active .shape__third svg{
+fill: #c2bfbf7a;
+}
+
+.shape__active .shape__first svg{
+fill: #a59e9ec7;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* .products__filter p {
+    font-size: 27px;
+    font-weight: bold;
+    color: #000;
+    padding-left: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+ */
+.filter__active {
+    color: #FE8787 !important;
+    padding-left: 10px;
+}
+
+.products__container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 500px;
+}
+
+/* Simplified slider container - Framer Motion handles positioning */
+.sliderContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.cardsWrapper {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center; 
+    margin: 0 25px;
+}
+
+.sliderControls {
+    margin-top: 16px;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    justify-content: center;
+}
+
+.sliderControls button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.scrollButton {
+    background-color: #cac9c985;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 10px 0px;
+    border-radius: 50%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.scrollButton:hover {
+    background-color: var(--Secondary);
+}
+
+.cardimg{
+    height: 100%;
+}

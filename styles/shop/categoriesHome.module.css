@@ -1,0 +1,146 @@
+.sec {
+  padding: 70px 0;
+  position: relative;
+}
+
+.h2 {
+  text-align: center;
+  margin-bottom: 10px;
+  color: #FE8787;
+  font-size: 35px;
+}
+
+.p {
+  text-align: center;
+  margin-bottom: 30px;
+  font-family: "Condiment", cursive;
+  font-size: 17px;
+}
+
+.categories__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin: 0 auto;
+  max-width: 90%;
+  position: relative;
+}
+
+.categories__body {
+  display: flex;
+  gap: 35px;
+  overflow: hidden;
+  width: calc(250px * 6 + 35px * 5); /* Width for exactly 6 categories */
+  scroll-behavior: smooth;
+  justify-content: center;
+}
+
+.category {
+  background-color: antiquewhite;
+  border-radius: 20vw 20vw 0 0;
+  overflow: hidden;
+  cursor: pointer;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 0 0 230px; /* Fixed width, don't grow or shrink */
+  transition: transform 0.3s ease;
+}
+
+.category:hover {
+  transform: translateY(-5px);
+}
+
+.category__figure {
+  overflow: hidden;
+  border-radius: 20vw 20vw 0 0;
+  width: 100%;
+  height: 230px;
+}
+
+.category__img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+
+.category p {
+  margin-top: 0px;
+  font-size: 27px;
+  font-weight: 600;
+}
+
+.scrollButton {
+  background: #FE8787;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+.scrollButton:hover {
+  background: #e57373;
+  transform: scale(1.1);
+}
+
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #ccc;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.activeDot {
+  background: #FE8787;
+  transform: scale(1.2);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1600px) {
+  .categories__body {
+    width: calc(200px * 6 + 25px * 5);
+  }
+  .category {
+    flex: 0 0 200px;
+  }
+  .category__figure {
+    height: 220px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .categories__body {
+    width: calc(180px * 6 + 20px * 5);
+  }
+  .category {
+    flex: 0 0 180px;
+  }
+  .category__figure {
+    height: 200px;
+  }
+  .category p {
+    font-size: 22px;
+  }
+}
